@@ -1,0 +1,22 @@
+metadata:
+  name: mlrun-jovyan
+spec:
+  origin_url: git://github.com/Praanshu101/ML_CICD#refs/heads/main
+  functions:
+  - url: load_data.py
+    name: load-iris-data
+    kind: job
+    image: mlrun/mlrun
+  - url: trainer.py
+    name: trainer
+    kind: job
+    image: mlrun/mlrun
+    handler: train
+  - url: serving.py
+    name: serving
+    kind: serving
+    image: mlrun/mlrun
+  conda: ''
+  desired_state: online
+  source: git://github.com/Praanshu101/ML_CICD#refs/heads/main
+kind: project
