@@ -2,11 +2,11 @@ import mlrun
 from kfp import dsl
 
 @dsl.pipeline(name="breast-cancer-demo")
-def pipeline(model_name="dataset_classifier"):
+def pipeline(model_name="classifier"):
     
     ingest = mlrun.run_function(
-        "load-breast-cancer-data",
-        name="load-breast-cancer-data",
+        "load-iris-data",
+        name="load-iris-data",
         params={"format": "pq", "model_name": model_name},
         outputs=["dataset"],
     )

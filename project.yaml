@@ -1,7 +1,7 @@
-metadata:
-  name: mlrun-jovyan
+status:
+  state: online
 spec:
-  origin_url: git://github.com/Praanshu101/ML_CICD#refs/heads/main
+  conda: ''
   functions:
   - url: load_data.py
     name: load-iris-data
@@ -16,7 +16,10 @@ spec:
     name: serving
     kind: serving
     image: mlrun/mlrun
-  conda: ''
-  desired_state: online
+  origin_url: git://github.com/Praanshu101/ML_CICD#refs/heads/main
   source: git://github.com/Praanshu101/ML_CICD#refs/heads/main
+  desired_state: online
 kind: project
+metadata:
+  name: mlrun-jovyan
+  created: '2025-04-11T12:20:32.164000'
