@@ -15,9 +15,8 @@ def pipeline(model_name="classifier"):
         "trainer",
         inputs={"dataset": ingest.outputs["dataset"]},
         hyperparams={
-            "n_estimators": [10, 100],
-            "max_depth": [2, 8],
-            "min_samples_split": [2, 5]
+            "n_estimators": [10, 100,200],
+            "max_depth": [2, 5,10]
         },
         selector="max.accuracy",
         outputs=["model"],

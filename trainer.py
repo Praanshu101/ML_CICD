@@ -8,7 +8,6 @@ def train(
     label_column: str = 'target',
     n_estimators: int = 100,
     max_depth: int = 3,
-    min_samples_split: int = 2,
     model_name: str = "dataset_classifier"
 ):
     
@@ -18,12 +17,11 @@ def train(
     
     #train test split
     
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
     
     model = RandomForestClassifier(
         n_estimators=n_estimators, 
         max_depth=max_depth,
-        min_samples_split=min_samples_split,
         random_state=42
     )
     
