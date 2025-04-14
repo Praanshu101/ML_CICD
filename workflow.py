@@ -5,8 +5,8 @@ from kfp import dsl
 def pipeline(model_name="classifier"):
     
     ingest = mlrun.run_function(
-        "load-iris-data",
-        name="load-iris-data",
+        "load-cancer-data",
+        name="load-cancer-data",
         params={"format": "pq", "model_name": model_name},
         outputs=["dataset"],
     )
